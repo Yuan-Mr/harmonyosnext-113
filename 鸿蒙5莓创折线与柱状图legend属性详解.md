@@ -1,270 +1,327 @@
-大家好，欢迎回来鸿蒙5莓创图表组件的专场，我们这一期来讲解组合图组件McLineBarChart中legend属性的详细用法。
+Hello everyone, welcome back to the special session on HarmonyOS 5 Meichuang chart components. In this episode, we'll explain the detailed usage of the `legend` property in the combined chart component McLineBarChart.  
 
-## 1. show属性
 
-作用：控制是否显示图例 类型：Boolean 默认值：true 可选值：true | false 场景：当需要隐藏图例时设置为false 代码示例：
-
-```
+## 1. `show` Property  
+**Function**: Controls whether the legend is displayed.  
+**Type**: Boolean  
+**Default**: `true`  
+**Options**: `true` | `false`  
+**Scenario**: Set to `false` to hide the legend.  
+**Code Example**:  
+```typescript
 legend: {
-  show: false // 隐藏图例
+  show: false // Hide the legend
 }
-```
+```  
 
-## 2. orient属性
 
-作用：设置图例的排列方向 类型：String 默认值：'horizontal' 可选值：'horizontal' | 'vertical' 场景：横向排列适合空间较宽的场景，纵向排列适合空间较高的场景 代码示例：
-
-```
+## 2. `orient` Property  
+**Function**: Sets the arrangement direction of the legend.  
+**Type**: String  
+**Default**: `'horizontal'`  
+**Options**: `'horizontal'` | `'vertical'`  
+**Scenario**: Horizontal arrangement suits wide spaces; vertical suits tall spaces.  
+**Code Example**:  
+```typescript
 legend: {
-  orient: 'vertical' // 纵向排列图例
+  orient: 'vertical' // Arrange legend vertically
 }
-```
+```  
 
-## 3. 位置属性组
 
-### 3.1 left属性
+## 3. Position Properties  
 
-作用：设置图例左侧位置 类型：String | Number 默认值：'auto' 可选值：'auto' | '10%' | 10 场景：需要精确定位图例左侧位置时使用 代码示例：
-
-```
+### 3.1 `left` Property  
+**Function**: Sets the left position of the legend.  
+**Type**: String | Number  
+**Default**: `'auto'`  
+**Options**: `'auto'` | `'10%'` | `10`  
+**Scenario**: Use to precisely position the left side of the legend.  
+**Code Example**:  
+```typescript
 legend: {
-  left: '20%' // 距离左侧20%的位置
+  left: '20%' // 20% from the left edge
 }
-```
+```  
 
-### 3.2 right属性
-
-作用：设置图例右侧位置 类型：String | Number 默认值：'auto' 可选值：'auto' | '10%' | 10 场景：需要精确定位图例右侧位置时使用 代码示例：
-
-```
+### 3.2 `right` Property  
+**Function**: Sets the right position of the legend.  
+**Type**: String | Number  
+**Default**: `'auto'`  
+**Options**: `'auto'` | `'10%'` | `10`  
+**Scenario**: Use to precisely position the right side of the legend.  
+**Code Example**:  
+```typescript
 legend: {
-  right: 50 // 距离右侧50像素
+  right: 50 // 50px from the right edge
 }
-```
+```  
 
-### 3.3 top属性
-
-作用：设置图例顶部位置 类型：String | Number 默认值：'6%' 可选值：'auto' | '10%' | 10 场景：需要精确定位图例顶部位置时使用 代码示例：
-
-```
+### 3.3 `top` Property  
+**Function**: Sets the top position of the legend.  
+**Type**: String | Number  
+**Default**: `'6%'`  
+**Options**: `'auto'` | `'10%'` | `10`  
+**Scenario**: Use to precisely position the top of the legend.  
+**Code Example**:  
+```typescript
 legend: {
-  top: '10%' // 距离顶部10%的位置
+  top: '10%' // 10% from the top edge
 }
-```
+```  
 
-### 3.4 bottom属性
-
-作用：设置图例底部位置 类型：String | Number 默认值：'auto' 可选值：'auto' | '10%' | 10 场景：需要精确定位图例底部位置时使用 代码示例：
-
-```
+### 3.4 `bottom` Property  
+**Function**: Sets the bottom position of the legend.  
+**Type**: String | Number  
+**Default**: `'auto'`  
+**Options**: `'auto'` | `'10%'` | `10`  
+**Scenario**: Use to precisely position the bottom of the legend.  
+**Code Example**:  
+```typescript
 legend: {
-  bottom: 30 // 距离底部30像素
+  bottom: 30 // 30px from the bottom edge
 }
-```
+```  
 
-## 4. 图标属性组
 
-### 4.1 icon属性
+## 4. Icon Properties  
 
-作用：设置图例项的图标形状 类型：String 默认值：'roundRect' 可选值：'rect' | 'circle' | 'roundRect' 场景：根据设计风格选择不同的图标形状 代码示例：
-
-```
+### 4.1 `icon` Property  
+**Function**: Sets the icon shape of legend items.  
+**Type**: String  
+**Default**: `'roundRect'`  
+**Options**: `'rect'` | `'circle'` | `'roundRect'`  
+**Scenario**: Choose different icon shapes based on design style.  
+**Code Example**:  
+```typescript
 legend: {
-  icon: 'circle' // 使用圆形图标
+  icon: 'circle' // Use circular icons
 }
-```
+```  
 
-### 4.2 iconRadian属性
-
-作用：设置圆角矩形的圆角大小 类型：Number 默认值：2 场景：当icon为'roundRect'时，调整圆角大小 代码示例：
-
-```
+### 4.2 `iconRadian` Property  
+**Function**: Sets the corner radius of rounded rectangles.  
+**Type**: Number  
+**Default**: `2`  
+**Scenario**: Adjust corner radius when `icon` is `'roundRect'`.  
+**Code Example**:  
+```typescript
 legend: {
   icon: 'roundRect',
-  iconRadian: 5 // 设置较大的圆角
+  iconRadian: 5 // Set larger corner radius
 }
-```
+```  
 
-### 4.3 itemWidth属性
-
-作用：设置图标宽度 类型：Number 默认值：8 场景：需要调整图标宽度时使用 代码示例：
-
-```
+### 4.3 `itemWidth` Property  
+**Function**: Sets the width of legend icons.  
+**Type**: Number  
+**Default**: `8`  
+**Scenario**: Use to adjust icon width.  
+**Code Example**:  
+```typescript
 legend: {
-  itemWidth: 12 // 设置更宽的图标
+  itemWidth: 12 // Set wider icons
 }
-```
+```  
 
-### 4.4 itemHeight属性
-
-作用：设置图标高度 类型：Number 默认值：8 场景：需要调整图标高度时使用 代码示例：
-
-```
+### 4.4 `itemHeight` Property  
+**Function**: Sets the height of legend icons.  
+**Type**: Number  
+**Default**: `8`  
+**Scenario**: Use to adjust icon height.  
+**Code Example**:  
+```typescript
 legend: {
-  itemHeight: 12 // 设置更高的图标
+  itemHeight: 12 // Set taller icons
 }
-```
+```  
 
-## 5. 间距属性组
 
-### 5.1 itemGap属性
+## 5. Spacing Properties  
 
-作用：设置图例项之间的间距 类型：Number 默认值：10 场景：需要调整图例项之间的间距时使用 代码示例：
-
-```
+### 5.1 `itemGap` Property  
+**Function**: Sets the spacing between legend items.  
+**Type**: Number  
+**Default**: `10`  
+**Scenario**: Use to adjust spacing between legend items.  
+**Code Example**:  
+```typescript
 legend: {
-  itemGap: 20 // 增加图例项间距
+  itemGap: 20 // Increase spacing between legend items
 }
-```
+```  
 
-### 5.2 itemTextGap属性
-
-作用：设置图形与文本的距离 类型：Number 默认值：5 场景：需要调整图标与文本之间的距离时使用 代码示例：
-
-```
+### 5.2 `itemTextGap` Property  
+**Function**: Sets the distance between icons and text.  
+**Type**: Number  
+**Default**: `5`  
+**Scenario**: Use to adjust the distance between icons and text.  
+**Code Example**:  
+```typescript
 legend: {
-  itemTextGap: 10 // 增加图标与文本间距
+  itemTextGap: 10 // Increase spacing between icons and text
 }
-```
+```  
 
-## 6. align属性
 
-作用：设置图例标记和文本的对齐方式 类型：String 默认值：'auto' 可选值：'auto' | 'left' | 'right' 场景：需要手动控制对齐方式时使用 代码示例：
-
-```
+## 6. `align` Property  
+**Function**: Sets the alignment of legend markers and text.  
+**Type**: String  
+**Default**: `'auto'`  
+**Options**: `'auto'` | `'left'` | `'right'`  
+**Scenario**: Use to manually control the alignment.  
+**Code Example**:  
+```typescript
 legend: {
-  align: 'right' // 强制右对齐
+  align: 'right' // Force right alignment
 }
-```
+```  
 
-## 7. selectAble属性
 
-作用：设置图例项是否可选 类型：Boolean 默认值：true 可选值：true | false 场景：需要禁用图例交互时设置为false 代码示例：
-
-```
+## 7. `selectAble` Property  
+**Function**: Sets whether legend items are selectable.  
+**Type**: Boolean  
+**Default**: `true`  
+**Options**: `true` | `false`  
+**Scenario**: Set to `false` to disable legend interaction.  
+**Code Example**:  
+```typescript
 legend: {
-  selectAble: false // 禁用图例选择
+  selectAble: false // Disable legend selection
 }
-```
+```  
 
-## 8. data属性
 
-作用：设置图例数据 类型：Array 默认值：[] 场景：需要自定义图例内容时使用 代码示例：
-
-```
+## 8. `data` Property  
+**Function**: Sets legend data.  
+**Type**: Array  
+**Default**: `[]`  
+**Scenario**: Use to customize legend content.  
+**Code Example**:  
+```typescript
 legend: {
-  data: ['销量', '库存', '增长率'] // 自定义图例项
+  data: ['Sales', 'Inventory', 'Growth Rate'] // Custom legend items
 }
-```
+```  
 
-## 9. 样式属性组
 
-### 9.1 textStyle属性
+## 9. Style Properties  
 
-作用：设置图例文字默认样式 类型：Object 子属性：
+### 9.1 `textStyle` Property  
+**Function**: Sets the default text style of the legend.  
+**Type**: Object  
+**Sub-properties**:  
+- `fontFamily`: Font type (default `'sans-serif'`).  
+- `fontWeight`: Font weight (default `'normal'`).  
+- `fontSize`: Font size (default `30`).  
+- `color`: Font color (default `'#333'`).  
+- `formatter`: Text formatting function or string.  
 
--   fontFamily：字体类型，默认'sans-serif'
--   fontWeight：字体粗细，默认'normal'
--   fontSize：字体大小，默认30
--   color：字体颜色，默认'#333'
--   formatter：文字格式化函数或字符串
-
-代码示例：
-
-```
+**Code Example**:  
+```typescript
 legend: {
   textStyle: {
     fontFamily: 'Arial',
     fontSize: 24,
     color: '#666',
-    formatter: '{value}项' // 格式化文本
+    formatter: '{value} Items' // Format text
   }
 }
-```
+```  
 
-### 9.2 iconStyle属性
-
-作用：设置图例图标默认样式 类型：Object 场景：需要自定义图标样式时使用 代码示例：
-
-```
+### 9.2 `iconStyle` Property  
+**Function**: Sets the default style of legend icons.  
+**Type**: Object  
+**Scenario**: Use to customize icon styles.  
+**Code Example**:  
+```typescript
 legend: {
   iconStyle: {
-    color: '#1890ff', // 图标颜色
-    borderWidth: 1, // 边框宽度
-    borderColor: '#333' // 边框颜色
+    color: '#1890ff', // Icon color
+    borderWidth: 1, // Border width
+    borderColor: '#333' // Border color
   }
 }
-```
+```  
 
-### 9.3 textUnselectedStyle属性
+### 9.3 `textUnselectedStyle` Property  
+**Function**: Sets the text style when legend items are unselected.  
+**Type**: Object  
+**Sub-properties**:  
+- `fontFamily`: Font type (default `'sans-serif'`).  
+- `fontSize`: Font size (default `30`).  
+- `color`: Font color (default `'#999'`).  
 
-作用：设置图例未选中状态的文字样式 类型：Object 子属性：
-
--   fontFamily：字体类型，默认'sans-serif'
--   fontSize：字体大小，默认30
--   color：字体颜色，默认'#999'
-
-代码示例：
-
-```
+**Code Example**:  
+```typescript
 legend: {
   textUnselectedStyle: {
-    color: '#ccc', // 未选中文字颜色
-    fontSize: 20 // 未选中文字大小
+    color: '#ccc', // Unselected text color
+    fontSize: 20 // Unselected text size
   }
 }
-```
+```  
 
-### 9.4 iconUnselectedStyle属性
-
-作用：设置图例未选中状态的图标样式 类型：Object 默认值：{color: '#999'} 场景：需要自定义未选中图标样式时使用 代码示例：
-
-```
+### 9.4 `iconUnselectedStyle` Property  
+**Function**: Sets the icon style when legend items are unselected.  
+**Type**: Object  
+**Default**: `{color: '#999'}`  
+**Scenario**: Use to customize unselected icon styles.  
+**Code Example**:  
+```typescript
 legend: {
   iconUnselectedStyle: {
-    color: '#ddd', // 未选中图标颜色
-    opacity: 0.5 // 未选中图标透明度
+    color: '#ddd', // Unselected icon color
+    opacity: 0.5 // Unselected icon opacity
   }
 }
-```
+```  
 
-## 10. 动画属性组
 
-### 10.1 animationCurve属性
+## 10. Animation Properties  
 
-作用：设置图例动画曲线 类型：String 默认值：'easeOutCubic' 场景：需要自定义动画效果时使用 代码示例：
-
-```
+### 10.1 `animationCurve` Property  
+**Function**: Sets the legend animation curve.  
+**Type**: String  
+**Default**: `'easeOutCubic'`  
+**Scenario**: Use to customize animation effects.  
+**Code Example**:  
+```typescript
 legend: {
-  animationCurve: 'linear' // 线性动画
+  animationCurve: 'linear' // Linear animation
 }
-```
+```  
 
-### 10.2 animationFrame属性
-
-作用：设置图例动画帧数 类型：Number 默认值：0 场景：需要控制动画流畅度时使用 代码示例：
-
-```
+### 10.2 `animationFrame` Property  
+**Function**: Sets the legend animation frame rate.  
+**Type**: Number  
+**Default**: `0`  
+**Scenario**: Use to control animation smoothness.  
+**Code Example**:  
+```typescript
 legend: {
-  animationFrame: 30 // 设置动画帧数
+  animationFrame: 30 // Set animation frame rate
 }
-```
+```  
 
-## 11. rLevel属性
 
-作用：设置图例渲染级别 类型：Number 默认值：20 场景：需要调整图例与其他元素的层级关系时使用 代码示例：
-
-```
+## 11. `rLevel` Property  
+**Function**: Sets the legend rendering level.  
+**Type**: Number  
+**Default**: `20`  
+**Scenario**: Use to adjust the layer relationship between the legend and other elements.  
+**Code Example**:  
+```typescript
 legend: {
-  rLevel: 30 // 提高渲染级别
+  rLevel: 30 // Increase rendering level
 }
-```
+```  
 
-## 实际应用案例
 
-下面是一个完整的legend配置示例，展示了如何在实际项目中使用这些属性：
+## Practical Application Case  
+The following is a complete `legend` configuration example demonstrating how to use these properties in real projects:  
 
-```
+```typescript
 legend: {
   show: true,
   orient: 'horizontal',
@@ -279,7 +336,7 @@ legend: {
     fontFamily: 'Microsoft YaHei',
     fontSize: 24,
     color: '#333',
-    formatter: '{value}数据'
+    formatter: '{value} Data'
   },
   iconStyle: {
     color: function(index) {
@@ -293,20 +350,20 @@ legend: {
   iconUnselectedStyle: {
     color: '#ddd'
   },
-  data: ['销售额', '利润', '增长率'],
+  data: ['Sales', 'Profit', 'Growth Rate'],
   selectAble: true,
   animationCurve: 'easeOutQuart',
   animationFrame: 40
 }
-```
+```  
 
-这个配置实现了：
+This configuration achieves:  
+1. Horizontally centered legend  
+2. Circular icons  
+3. Custom text format and color  
+4. Different icon colors based on indices  
+5. Smooth animation effects  
+6. Interactive legend items  
 
-1.  水平居中的图例
-1.  圆形图标
-1.  自定义的文本格式和颜色
-1.  根据索引设置不同的图标颜色
-1.  平滑的动画效果
-1.  可交互的图例项
 
-好，这期讲到这里就结束了，希望大家通过这篇文章能够全面掌握莓创图表组合图组件中legend属性的使用方法，在实际项目中灵活运用这些配置，创建出美观实用的图表效果。如果有任何问题，欢迎在评论区留言讨论！
+That's all for this episode. We hope this article helps you fully master the usage of the `legend` property in Meichuang's combined chart component. Apply these configurations flexibly in real projects to create beautiful and practical chart effects. If you have any questions, feel free to leave a comment!
